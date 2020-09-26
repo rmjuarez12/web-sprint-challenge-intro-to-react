@@ -30,11 +30,21 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+**A: React JS is a JavaScript library for building user interfaces or UI components. React JS is a great way to build Web Applications, thanks to the better handling of dynamic data for faster response times. The entirety of the workflow in React is about dynamic content, which means it will handle data provided to it automatically and efficiently. React JS uses its own "virtual" DOM, which helps a lot with performance, and it is one of the main reasons it is very popular and widely used. It uses components, in order to help with having a much easier and manageable environment, by having sections of the application in different files. This helps a lot for debugging, and also to have a very organized environment.**
+
 1. Describe component state.
+
+**A: A component state is an object that is managed within the component. States are the most common and most important way to handle the data across your applications. States can help storing information to be used at a later time. This helps with using that stored piece of information anywhere within the component, or maybe to another component by passing it as a prop.**
 
 1. Describe props.
 
+**A: props are set of data passed to a component. While the purpose is similar to a state(which is to manage stored information), unlike a state, you cannot directly manipulate a prop. Props are mostly used to help pass data to other components that need it. For example, you have an API call that returns important information that you need for displaying it to your application. With the help of props, you can easily share that data across all components that need it. This helps so that we do not have to constantly re-declare the data on another component. It also helps with organizing the data you want to share and have a much more organized environment.**
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+**A: Side effects are functions that are called every time the app render and re-renders. This means that, if there is any change to any state on any component, the side effect will kick in, since this change will cause the app to re-render. You can however stop it from running on each render by specifying states that can trigger it. This is essential to know, because if the data inside of the side effect causes a change on a state, chances are it will be in an infinite loop, which can crash your application. This is why it is important to plan how you will use a side effect function and for what purpose.**
+
+---
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
