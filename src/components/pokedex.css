@@ -40,6 +40,17 @@
     cursor: pointer;
   }
 
+  .pokemon-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .stat-value {
+    width: 45%;
+    margin-bottom: 5px;
+  }
+
   /* //// LEFT PART //// */
 
   div#curve1_left {
@@ -299,11 +310,17 @@
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -o-border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   div#picture img {
     display: block;
     margin: 0 auto;
+    width: 50%;
+    height: auto !important;
   }
 
   div#topPicture {
