@@ -60,7 +60,7 @@ export default function PokemonListItem(props) {
     pokeAPICall.then((res) => {
       setPokemonInfo(res.data);
     });
-  }, []);
+  }, [props.infoURL]);
 
   return (
     <PokemonItemWrapper>

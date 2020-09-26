@@ -16,6 +16,7 @@ const App = () => {
   // the state properties here.
 
   const [pokemonList, setPokemonList] = useState([]);
+  const [pokemonQuery, setPokemonQuery] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a
@@ -28,7 +29,7 @@ const App = () => {
 
     pokeAPICall
       .then((res) => {
-        console.log(res);
+        console.log(res.data.results);
         setPokemonList(res.data.results);
       })
       .then((res) => {
@@ -42,7 +43,6 @@ const App = () => {
     gsap.to("#overlay", { opacity: 1, display: "block", duration: 1 });
     gsap.to("#pokedex", { y: 0, display: "block", duration: 1 });
 
-    console.log(pokemon);
     setSelectedPokemon(pokemon);
   }
 
@@ -63,11 +63,41 @@ const App = () => {
     });
   }
 
+  // Search for pokemon
+  function pokemonSearch(pokemon) {
+    const searchTerms = pokemon.split(" ");
+    let getQueriedPokemon = [];
+
+    pokemonList.forEach((item) => {
+      // Go through each of the keywords from the search query string
+      searchTerms.forEach((str) => {
+        // Get the main comparison variable
+        const comparisonStr = item.name.toLowerCase();
+
+        // If the comparison returns true, add it to the query posts array
+        if (comparisonStr.indexOf(str.toLowerCase()) !== -1) {
+          getQueriedPokemon.push(item);
+        }
+      });
+    });
+
+    if (getQueriedPokemon.length !== pokemonList.length) {
+      setPokemonQuery(getQueriedPokemon);
+    } else {
+      setPokemonQuery([]);
+    }
+  }
+
   return (
     <div className="App">
       <PokeDex selectedPokemon={selectedPokemon} closePokedex={closePokedex} />
 
-      <PokemonList allPokemon={pokemonList} openPokeDex={openPokeDex} />
+      <PokemonList
+        allPokemon={pokemonList}
+        openPokeDex={openPokeDex}
+        pokemonSearch={pokemonSearch}
+        pokemonQuery={pokemonQuery}
+      />
 
       <div id="overlay"></div>
     </div>

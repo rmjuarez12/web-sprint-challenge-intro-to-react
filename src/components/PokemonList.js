@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Import Components
 import PokemonListItem from "./PokemonListItem";
@@ -28,21 +28,53 @@ const PokemonListUl = styled.ul`
 `;
 
 export default function Pokemons(props) {
+  const [pokemonSearch, setPokemonSearch] = useState("");
+
+  console.log(props.pokemonQuery);
+
   return (
     <PokemonListWrapper id="list-container">
       <PokemonListTitle>Original 151 Pokemon List</PokemonListTitle>
 
+      <form
+        className="pokemon-search"
+        onSubmit={(e) => {
+          e.preventDefault();
+
+          props.pokemonSearch(pokemonSearch);
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Search Pokemon..."
+          onChange={(text) => setPokemonSearch(text.target.value)}
+        />
+      </form>
+
       <PokemonListUl>
-        {props.allPokemon.map((pokemon, index) => {
-          return (
-            <PokemonListItem
-              key={index}
-              name={pokemon.name}
-              infoURL={pokemon.url}
-              openPokeDex={props.openPokeDex}
-            />
-          );
-        })}
+        {props.pokemonQuery.length < 1 &&
+          props.allPokemon.map((pokemon, index) => {
+            return (
+              <PokemonListItem
+                key={index}
+                name={pokemon.name}
+                infoURL={pokemon.url}
+                openPokeDex={props.openPokeDex}
+              />
+            );
+          })}
+
+        {props.pokemonQuery.length > 0 &&
+          props.pokemonQuery.map((pokemon, index) => {
+            return (
+              <PokemonListItem
+                key={index}
+                name={pokemon.name}
+                infoURL={pokemon.url}
+                openPokeDex={props.openPokeDex}
+              />
+            );
+          })}
       </PokemonListUl>
     </PokemonListWrapper>
   );
