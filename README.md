@@ -28,19 +28,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+- What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
 **A: React JS is a JavaScript library for building user interfaces or UI components. React JS is a great way to build Web Applications, thanks to the better handling of dynamic data for faster response times. The entirety of the workflow in React is about dynamic content, which means it will handle data provided to it automatically and efficiently. React JS uses its own "virtual" DOM, which helps a lot with performance, and it is one of the main reasons it is very popular and widely used. It uses components, in order to help with having a much easier and manageable environment, by having sections of the application in different files. This helps a lot for debugging, and also to have a very organized environment.**
 
-1. Describe component state.
+- Describe component state.
 
 **A: A component state is an object that is managed within the component. States are the most common and most important way to handle the data across your applications. States can help storing information to be used at a later time. This helps with using that stored piece of information anywhere within the component, or maybe to another component by passing it as a prop.**
 
-1. Describe props.
+- Describe props.
 
 **A: props are set of data passed to a component. While the purpose is similar to a state(which is to manage stored information), unlike a state, you cannot directly manipulate a prop. Props are mostly used to help pass data to other components that need it. For example, you have an API call that returns important information that you need for displaying it to your application. With the help of props, you can easily share that data across all components that need it. This helps so that we do not have to constantly re-declare the data on another component. It also helps with organizing the data you want to share and have a much more organized environment.**
 
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+- What are side effects, and how do you sync effects in a React component to changes of certain state or props?
 
 **A: Side effects are functions that are called every time the app render and re-renders. This means that, if there is any change to any state on any component, the side effect will kick in, since this change will cause the app to re-render. You can however stop it from running on each render by specifying states that can trigger it. This is essential to know, because if the data inside of the side effect causes a change on a state, chances are it will be in an infinite loop, which can crash your application. This is why it is important to plan how you will use a side effect function and for what purpose.**
 
@@ -66,15 +66,15 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Your finished project must include all of the following requirements:
 
-- [ ] Use ONE of the following APIs:
+- [x] Use ONE of the following APIs:
   - [Star Wars API](https://swapi.dev/)
   - [Alternate Star Wars API](https://swapi.py4e.com/)
   - [The Rick and Morty API](https://rickandmortyapi.com/)
   - [The RESTful Pokémon API](https://pokeapi.co/) (**harder**)
-- [ ] Use the documentation and Google to learn how to fetch characters from your API.
-- [ ] Obtain a list of characters. One or several requests might be needed, depending on the API.
-- [ ] Set the list of characters into state.
-- [ ] Render your characters to the screen:
+- [x] Use the documentation and Google to learn how to fetch characters from your API.
+- [x] Obtain a list of characters. One or several requests might be needed, depending on the API.
+- [x] Set the list of characters into state.
+- [x] Render your characters to the screen:
   - Build a React component named 'Character' to render an individual character.
   - Map over the list in state, and for each character render a Character to the page.
   - You must display at least one element for each character in the data set.
@@ -82,21 +82,21 @@ Your finished project must include all of the following requirements:
 
 ### Required best practices
 
-- [ ] Consistent naming. Examples: variables, functions, Components, and file/folder organization.
-- [ ] Consistent spacing. Examples: line breaks, around arguments and before/after functions.
-- [ ] Consistent quotation usage.
-- [ ] Spell-check.
-- [ ] Schedule time to review, refine and reassess your work.
+- [x] Consistent naming. Examples: variables, functions, Components, and file/folder organization.
+- [x] Consistent spacing. Examples: line breaks, around arguments and before/after functions.
+- [x] Consistent quotation usage.
+- [x] Spell-check.
+- [x] Schedule time to review, refine and reassess your work.
 
 It is better to submit a challenge that meets [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product) than one that attempts too much and fails.
 
 ### Tips and Gotchas
 
-- [ ] Test your API and inspect the data in Chrome, Postman or HTTPie _before_ writing the code for the request(s). See screenshots at the root of the project.
-- [ ] Try not to hammer your API while developing. Infinite loops in your code might trigger hundreds of requests!
-- [ ] The Pokemon API is a slightly harder challenge because a single network request might not be enough to get all the data you need.
-- [ ] Running `npm` commands in the wrong folder will not work. **Be aware of what folder you're in** when working in the command line.
-- [ ] The `start` process can sometimes choke after adding new dependencies and may need to be restarted.
+- [x] Test your API and inspect the data in Chrome, Postman or HTTPie _before_ writing the code for the request(s). See screenshots at the root of the project.
+- [x] Try not to hammer your API while developing. Infinite loops in your code might trigger hundreds of requests!
+- [x] The Pokemon API is a slightly harder challenge because a single network request might not be enough to get all the data you need.
+- [x] Running `npm` commands in the wrong folder will not work. **Be aware of what folder you're in** when working in the command line.
+- [x] The `start` process can sometimes choke after adding new dependencies and may need to be restarted.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
