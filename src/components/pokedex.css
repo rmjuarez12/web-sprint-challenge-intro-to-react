@@ -927,7 +927,11 @@
 
 @media handheld and (orientation: portrait), (max-width: 768px) {
   div#pokedex {
-    width: 400px;
+    width: 415px;
+    overflow-y: scroll;
+    height: 100vh;
+    margin: 0 auto;
+    top: 20px;
   }
 
   div#logo {
@@ -992,5 +996,29 @@
     -webkit-border-top-left-radius: 30px;
     -moz-border-top-left-radius: 30px;
     -o-border-top-left-radius: 30px;
+  }
+
+  div#left,
+  div#right {
+    float: none !important;
+    clear: both;
+  }
+
+  div#right {
+    width: 400px;
+    margin-bottom: 50px;
+  }
+
+  div#bg_curve2_right {
+    width: 100%;
+  }
+
+  div#stats {
+    width: 330px;
+  }
+
+  div#yellowBox2 {
+    right: 25px;
+    left: auto !important;
   }
 }

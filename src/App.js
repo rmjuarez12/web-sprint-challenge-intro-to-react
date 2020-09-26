@@ -37,6 +37,7 @@ const App = () => {
       .catch((error) => alert(error));
   }, []);
 
+  // Function to bring in the PokeDex with the pokemon info
   function openPokeDex(pokemon) {
     gsap.to("#overlay", { opacity: 1, display: "block", duration: 1 });
     gsap.to("#pokedex", { y: 0, display: "block", duration: 1 });
@@ -45,11 +46,21 @@ const App = () => {
     setSelectedPokemon(pokemon);
   }
 
+  // Function to close the PokeDex
   function closePokedex() {
     gsap.to("#overlay", { opacity: 0, display: "none", duration: 1 });
     gsap.to("#pokedex", { y: "100vh", display: "block", duration: 1 });
 
     setSelectedPokemon(null);
+  }
+
+  // Add an event listener to close PokeDex with the escape key
+  if (selectedPokemon !== null) {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" || event.key === "Esc") {
+        closePokedex();
+      }
+    });
   }
 
   return (
