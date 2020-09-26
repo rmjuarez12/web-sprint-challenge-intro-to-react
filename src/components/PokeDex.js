@@ -1,5 +1,8 @@
 import React from "react";
 
+// Import Components
+import PokemonInfo from "./PokemonInfo";
+
 // Import assets
 import "./pokedex.css";
 
@@ -49,7 +52,9 @@ export default function PokeDex(props) {
           </div>
         </div>
         <div id="bigbluebutton">
-          <button className="pokedex-close">X</button>
+          <button className="pokedex-close" onClick={props.closePokedex}>
+            X
+          </button>
         </div>
         <div id="barbutton1"></div>
         <div id="barbutton2"></div>
@@ -72,9 +77,11 @@ export default function PokeDex(props) {
         </div>
       </div>
       <div id="right">
-        <div id="stats"></div>
-        <div id="yellowBox1"></div>
-        <div id="yellowBox2"></div>
+        <div id="stats">{props.selectedPokemon !== null && <PokemonInfo info={props.selectedPokemon} />}</div>
+        <div id="yellowBox1">
+          {props.selectedPokemon !== null && `${props.selectedPokemon.forms[0].name}`}
+        </div>
+        <div id="yellowBox2">{props.selectedPokemon !== null && `#${props.selectedPokemon.id}`}</div>
         <div id="bg_curve1_right"></div>
         <div id="bg_curve2_right"></div>
         <div id="curve1_right"></div>

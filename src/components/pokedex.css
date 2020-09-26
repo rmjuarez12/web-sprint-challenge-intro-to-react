@@ -869,6 +869,14 @@
     -webkit-box-shadow: 0 0 20px #ff6600 inset;
     -moz-box-shadow: 0 0 20px #ff6600 inset;
     -o-box-shadow: 0 0 20px #ff6600 inset;
+
+    font-family: "VT323", monospace;
+    text-transform: capitalize;
+    font-size: 20pt;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   div#yellowBox2 {
@@ -890,6 +898,13 @@
     -webkit-box-shadow: 0 0 20px #ff6600 inset;
     -moz-box-shadow: 0 0 20px #ff6600 inset;
     -o-box-shadow: 0 0 20px #ff6600 inset;
+
+    font-family: "VT323", monospace;
+    font-size: 30pt;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -907,6 +922,7 @@
     position: absolute;
     top: 220px;
     left: 30px;
+    display: none;
   }
 
   div#left {
@@ -959,14 +975,5 @@
     -webkit-border-top-left-radius: 30px;
     -moz-border-top-left-radius: 30px;
     -o-border-top-left-radius: 30px;
-  }
-
-  div#right,
-  div#screen,
-  div#bigbluebutton,
-  div#barbutton1,
-  div#barbutton2,
-  div#cross {
-    display: none;
   }
 }

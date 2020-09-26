@@ -45,9 +45,16 @@ const App = () => {
     setSelectedPokemon(pokemon);
   }
 
+  function closePokedex() {
+    gsap.to("#overlay", { opacity: 0, display: "none", duration: 1 });
+    gsap.to("#pokedex", { y: "100vh", display: "block", duration: 1 });
+
+    setSelectedPokemon(null);
+  }
+
   return (
     <div className="App">
-      <PokeDex selectedPokemon={selectedPokemon} />
+      <PokeDex selectedPokemon={selectedPokemon} closePokedex={closePokedex} />
 
       <PokemonList allPokemon={pokemonList} openPokeDex={openPokeDex} />
 

@@ -10,6 +10,7 @@ const InfoWrapper = styled.div`
   margin: 0 auto 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid black;
+  color: white;
 `;
 
 const InfoTitle = styled.h3`
@@ -31,10 +32,9 @@ export default function PokemonInfo(props) {
         <InfoTitle>Abilities</InfoTitle>
 
         <InfoText>
-          {props.info.abilities !== undefined &&
-            props.info.abilities.map((ability, index) => {
-              return <p key={index}>{ability.ability.name}</p>;
-            })}
+          {props.info.abilities.map((ability, index) => {
+            return <p key={index}>{ability.ability.name}</p>;
+          })}
         </InfoText>
       </InfoWrapper>
 
